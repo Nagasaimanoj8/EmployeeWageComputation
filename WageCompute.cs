@@ -10,24 +10,31 @@ namespace EmployeeWageCompute
     {
         static void Main(string[] args)
         {
-            int isPresent = 1;
+            int isFullTime = 1;
+            int isPartTime = 2;
             int empRatePerHr = 20;
             int empHrs = 0;
             int empWage = 0;
             Random random = new Random();
-            int empInput = random.Next(0, 2);
-            if (isPresent == empInput)
+            int empInput = random.Next(0, 3);
+            if (isFullTime == empInput)
             {
                 Console.WriteLine("employee is present");
                 empHrs = 8;
 
             }
+            else if (isPartTime == empInput)
+            {
+                Console.WriteLine("employee is present");
+                empHrs = 4;
+            }
             else
             {
                 Console.WriteLine("employee absent");
+                empWage = 0;
             }
             empWage = empRatePerHr * empHrs;
-            Console.WriteLine("Daily Wage:{0}", empWage);
+            Console.WriteLine("Daily Wage :{0}", empWage);
             Console.ReadLine();
         }
     }
